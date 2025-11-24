@@ -9,7 +9,7 @@ import { CONSTANTS, API_ROUTES } from "./constants/constants";
 // Modules
 import authRoutes from "./routes/auth.route";
 import featureRoute from "./routes/feature.route";
-import paymentRoute from './routes/payment.route'
+import paymentRoute from "./routes/payment.route";
 
 // Configuration
 dotenv.config();
@@ -25,17 +25,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || CONSTANTS.FRONTEND_URL.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: "GET,POST,PUT,DELETE",
+    origin: [...CONSTANTS.FRONTEND_URL],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Server working");
 });
@@ -53,9 +49,8 @@ async function startServer() {
     app.use(API_ROUTES.BASE, paymentRoute);
 
     app.listen(PORT, () => {
-      console.log(`Secure server running on http://localhost:${PORT}`);
+      console.log(`Secure server running on ${PORT}`);
     });
-
   } catch (error) {
     console.error("Database connection error =>", (error as Error).message);
     process.exit(1);
