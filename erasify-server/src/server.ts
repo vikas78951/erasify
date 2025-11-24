@@ -17,7 +17,7 @@ dotenv.config();
 // Constants
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
-const url = process.env.MONGODB_URL;
+const url = process.env.MONGODB_URI;
 
 // Middleware
 app.use(express.json());
