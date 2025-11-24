@@ -72,8 +72,8 @@ export default function PrivacyPolicy() {
         <h2 className="mt-6 text-xl font-semibold">7. Contact Us</h2>
         <p>
           For any privacy concerns, contact us at{" "}
-          <a href="mailto:vikrant78951@gmail.com" className="text-blue-500">
-            vikrant78951@gmail.com
+          <a href="mailto:vikass78951@gmail.com" className="text-blue-500">
+            vikass78951@gmail.com
           </a>
           .
         </p>

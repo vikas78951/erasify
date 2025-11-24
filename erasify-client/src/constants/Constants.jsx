@@ -171,7 +171,7 @@ export const PRICING_PLANS = [
 
 export const BACKEND_DOMAIN =
   mode === "production"
-    ? "https://erasify-server-production.up.railway.app"
+    ? "https://erasify-pi.vercel.app"
     : "http://localhost:3000";
 
 export const API = {
