@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const Logo = ({ className }) => {
   return (
-    <Link to='/' className={`flex items-center gap-1 ${className && className}}`}>
+    <Link
+      to="/"
+      className={`flex items-center gap-1 ${className && className}}`}
+    >
       <div className="relative block h-8 w-4 rounded-sm bg-gradient-to-b from-primary to-secondary">
         <div className="absolute top-1/2 h-[2px] w-full -translate-y-1/2 bg-surface"></div>
       </div>

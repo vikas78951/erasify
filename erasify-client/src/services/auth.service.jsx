@@ -40,7 +40,7 @@ export const logoutuser =  async () => {
 
 export const registerUser = async (formData) => {
   try {
-    const response = await axios.post(API.register, formData,{
+    const response = await axios.post(API.register, formData, {
       withCredentials: true,
     });
       if (!response.status === 200) {

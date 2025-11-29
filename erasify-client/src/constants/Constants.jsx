@@ -1,4 +1,4 @@
-const mode = import.meta.env.VITE_NODE_ENV;
+const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URI;
 
 export const APPLICATION_CONFIG = {
   BRAND_NAME: "erasify",
@@ -169,10 +169,7 @@ export const PRICING_PLANS = [
 ];
 
 
-export const BACKEND_DOMAIN =
-  mode === "production"
-    ? "https://erasify-pi.vercel.app"
-    : "http://localhost:3000";
+
 
 export const API = {
   login: `${BACKEND_DOMAIN}/api/v1/auth/login`,
