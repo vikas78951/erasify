@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import User from "../model/user.model";
 import GuestUser from "../model/guestUser.model";
 import bcrypt from "bcrypt";
