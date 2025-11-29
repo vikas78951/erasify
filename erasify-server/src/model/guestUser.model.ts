@@ -13,7 +13,7 @@ export interface User {
 const guestUserSchema = new mongoose.Schema({
 
   uuid: { type: String, required: true, unique: true },
-  fingerprint : { type: String, required: true, unique: true },
+  fingerprint : { type: String, required: false, unique: true },
   createdAt: { type: Date, default: Date.now },
   role : {
     type : String,
